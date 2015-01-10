@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TaxE - Team FVS</title>
+        <link href='http://fonts.googleapis.com/css?family=Play:400,700' rel='stylesheet' type='text/css'>
+        <style type="text/css">
+            html, body{
+                margin:0;padding:0
+            }
+            
+            body{
+                font-family: Play, Arial, sans-serif
+            }
+            
+            nav#topnav{
+                background-color: hotpink;
+                color: white; width:100%
+            }
+            #topnav ul{
+                padding:0;margin-top: 0;margin-bottom: 0
+            }
+            #topnav ul li{
+                list-style-type: none;
+                padding: 6px 6px 6px 6px;
+                border-right: 1px solid white;
+                font-weight: bold;
+                display: inline-block;
+                height: 32px
+            }
+            #topnav ul li:hover{
+                background-color: white;
+                color: hotpink
+            }
+            #topnav ul li a{
+                color:inherit;text-decoration: none;display: block;height: 100%
+            }
+            #topnav ul li#fvslogo{
+                background-color: white;
+                background-image: url(res/fvs64.png);
+                background-repeat: no-repeat no-repeat;
+                background-position: center center;
+                background-size: auto 32px;
+                width:78px;
+            }
+            #fvslogo a{
+                width:100%
+            }
+            #fvslogo a span{
+                display: none
+            }
+            
+            .contain{
+                margin-left:auto;margin-right:auto;max-width:1008px;
+            }
+            
+            #bigpromo{
+                width:100%;height:450px;
+            }
+            #bigpromo h1{
+                font-size: 60px;
+                color: white;
+                position:relative;
+                z-index: 10;
+                margin-top: 0px;margin-bottom: 0px;
+                top: 200px;
+                text-align: center
+            }
+            
+            blockquote{
+                font-size: 1.4em
+            }
+            
+            #get{
+                background-color: skyblue;color:white
+            }
+            #code{
+                background-color: maroon; color:white
+            }
+            
+            h2{
+                margin-top:0px;padding-top:16px;
+            }
+            
+            section p:last-of-type{
+                margin-bottom: 0px;padding-bottom: 16px
+            }
+            
+            footer{
+                background-color:#323232;color:white;font-size: 0.6em;padding:4px 4px 4px 4px
+            }
+            
+            footer p{
+                margin-top:0px;margin-bottom: 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <nav id="topnav"><ul class="contain">
+            <li id="fvslogo"><a href="#top" title="FVS"><span>FVS</span>&nbsp;</a></li><li>
+            <a href="#about" title="About TaxE">About</a></li><li>
+            <a href="#get" title="Get TaxE">Get TaxE</a></li><li>
+            <a href="#code" title="TaxE Code">Code</a></li>
+        </ul></nav>
+        <div id="bigpromo" style="background-color:black">
+            <h1 class="contain">TaxE - A Game about Trains</h1>
+        </div>
+        <section id="about"><div class="contain">
+            <blockquote>"TaxE is the best game I've played in the past 20 minutes"<br/><cite>Developer</cite></blockquote>
+            <p>TaxE is the latest, and first, game from Team FVS.  A story of great suspense, tragedy and jubilance as you must step up and become a train company.  Your rivals will try to beat you and leave you with nowhere left to run but you must ensure your transportation empire prevails.</p>
+        </div></section>
+        <section id="get"><div class="contain">
+            <h2>Download TaxE</h2>
+            <p>TaxE runs on Windows, Mac and Linux with Java installed.  It is not currently compatible with Android or iOS (and most probably never will be).  Download below and Play Now.</p>
+        </div></section>
+        <section id="code"><div class="contain">
+            <h2>Explore the Code</h2>
+            <p>TaxE is open source, which means you're free to take the game resources and code and make your own version.  All of our code is available to download on GitHub so take a look.</p>
+        </div></section>
+        <footer>
+            <p class="contain">&copy; FVS 2014</p>
+        </footer>
+    </body>
+</html>
