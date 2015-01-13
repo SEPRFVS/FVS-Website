@@ -92,6 +92,82 @@
             footer p{
                 margin-top:0px;margin-bottom: 0px;
             }
+            
+            #trainmenu{
+                background-image: url(res/screenshot1.png);
+                background-position: center center;
+                background-repeat: no-repeat no-repeat;
+                position: relative
+            }
+            #trainmenu ul{
+                display: inline-block;
+                margin: 0px 0px 0px 0px;
+                padding: 0px 0px 0px 0px;
+                border-right: 1px solid white;
+                width: 25%;
+                color:black;
+            }
+            #trainmenu ul li{
+                display: block;
+                border-bottom: 1px solid white;
+                text-align: center;
+                background-color: rgba(255,255,255,0.7)
+            }
+            #trainmenu ul li:last-of-type{
+                border-bottom: none;
+            }
+            #trainmenu ul li:hover{
+                cursor:pointer;
+                background-color: white;
+            }
+            #trainmenu ul li a{
+                color:inherit;
+                display: block;
+                width: 100%;
+                padding:8px 8px 8px 8px;
+            }
+            #trainmenu div{
+                display: inline-block;
+                position: absolute;
+                max-width: 74%;
+                font-size:1.2em;
+                background-color:rgba(255,255,255,0.5);
+                height: 100%;width:100%;
+                padding:0px 8px 0px 8px
+            }
+            #trainmenu div p{
+                background-size: 64px 64px;
+                background-position:right center;
+                background-repeat: no-repeat no-repeat;
+                margin: 0px 0px 0px 0px;
+                padding: 8px 64px 8px 0px
+            }
+            #trainmenu-steam{
+                background-image: url(res/SteamTrain.png)
+            }
+            #trainmenu-diesel{
+                background-image: url(res/DieselTrain.png)
+            }
+            #trainmenu-electric{
+                background-image: url(res/ElectricTrain.png)
+            }
+            #trainmenu-bullet{
+                background-image: url(res/BulletTrain.png)
+            }
+            #trainmenu-nuclear{
+                background-image: url(res/NuclearTrain.png)
+            }
+            
+            .smlshot, .midshot, .bigshot{
+                padding: 8px 8px 8px 8px
+            }
+            .midshot{
+                width: 350px;
+                height: auto
+            }
+            .left{
+                float: left
+            }
         </style>
     </head>
     <body>
@@ -106,7 +182,49 @@
         </div>
         <section id="about"><div class="contain">
             <blockquote>"TaxE is the best game I've played in the past 20 minutes"<br/><cite>Developer</cite></blockquote>
-            <p>TaxE is the latest, and first, game from Team FVS.  A story of great suspense, tragedy and jubilance as you must step up and become a train company.  Your rivals will try to beat you and leave you with nowhere left to run but you must ensure your transportation empire prevails.</p>
+            <p>TaxE is the latest, and first, game from Team FVS.  A story of great suspense, tragedy and jubilance as you must step up and become a train company.  Your rivals will try to beat you and leave you with nowhere left to run but you must ensure your transportation empire prevails.  Using all the trains at your disposal you need to travel across Europe to get your train to the most destinations in the time you have.  Your main competitor won't stand still, so play now to make sure you're on top.</p>
+            <div id="trainmenu">
+                <ul>
+                    <li><a title="Steam" onclick="trainmenuChange('steam');">Steam</a></li>
+                    <li><a title="Diesel" onclick="trainmenuChange('diesel');">Diesel</a></li>
+                    <li><a title="Electric" onclick="trainmenuChange('electric');">Electric</a></li>
+                    <li><a title="Bullet" onclick="trainmenuChange('bullet');">Bullet</a></li>
+                    <li><a title="Nuclear" onclick="trainmenuChange('nuclear');">Nucelar</a></li>
+                </ul>
+                <div>
+                    <p id="trainmenu-steam">Go back to the roots of the rail indistry as you move steam trains around the game world in a bid to reach your destinations ahead of the competition.<br/><br/>They may be slow but the humble steam train will reliably get you there on time.</p>
+                    <p id="trainmenu-diesel">Diesel is Petrols more environmentally friendly brother and currently powers a large part of the trains in use across the world today.  Take to the rails and race to your destination.<br/><br/>Diesel keeps the world moving, so make the journey to the other side of the continent in a Diesel.</p>
+                    <p id="trainmenu-electric">If you've ever travelled across the country before, it was an electric train that got you there on time.  Powered by wires above the rails, electricity always keeps running.<br/><br/>Take your journey now, and take it in style with an electric train.</p>
+                    <p id="trainmenu-bullet">Famous for powering the railways of Japan, the Bullet train was once the fastest there was so you know you're not going to be late today.<br/><br/>The more of these you have, the greater your chances are of beating the competition and winning the race to be the best.</p>
+                    <p id="trainmenu-nuclear">Nuclear energy provides clean and efficient energy to millions everyday and is deployed on different modes of transport already.  We add trains to the atomic arsenal.<br/><br/>Nothing can stand in your way with radioactive power behind your attempts to beat the competition and win.</p>
+                </div>
+                <script type="text/javascript">
+                    function trainmenuSetup(){
+                        window.document.getElementById("trainmenu-steam").style.display = "block";
+                        window.document.getElementById("trainmenu-diesel").style.display = "none";
+                        window.document.getElementById("trainmenu-electric").style.display = "none";
+                        window.document.getElementById("trainmenu-bullet").style.display = "none";
+                        window.document.getElementById("trainmenu-nuclear").style.display = "none";
+                    }
+                    
+                    function trainmenuChange(train){
+                        window.document.getElementById("trainmenu-steam").style.display = "none";
+                        window.document.getElementById("trainmenu-diesel").style.display = "none";
+                        window.document.getElementById("trainmenu-electric").style.display = "none";
+                        window.document.getElementById("trainmenu-bullet").style.display = "none";
+                        window.document.getElementById("trainmenu-nuclear").style.display = "none";
+                        window.document.getElementById("trainmenu-" + train).style.display = "block";
+                    }
+                    
+                    trainmenuSetup();
+                </script>
+            </div>
+            <p>You can travel across Europe to get your trains to their destination as quickly as possible.  With stations in over 25 countries there are hundreds of possibilities as to what you can do.  Your main competitor operates across the same network so you'll need to make sure your trains are the fastest and taking the best route possible to ensure that they reach the destination first.  The player who completes the most goals wins, so you need to make sure that you're keeping on top.</p>
+            <img src="res/screenshot1.png" class="midshot left" alt="Train Map from TaxE" />
+            <h3>Game Map</h3>
+            <p>There are stations and junctions across over 25 european countries, giving you hundreds of possible routes you can take.  The realistic map of the continent makes it easy to find the station you need, whilst the abstraction of the train lines makes it easy to understand just how long each journey will take when paired with the abilities of each train you use.</p>
+            <p>Stations have infinite capacity so you don't need to worry about where the other player has as their final destination, unless you're on a collision course.  All trains sit at a platform so it's easy to pick your train out from the station and give the driver instructions of where his next adventure will be to.</p>
+            <p>Play the game to explore all the destinations!</p>
         </div></section>
         <section id="get"><div class="contain">
             <h2>Download TaxE</h2>
