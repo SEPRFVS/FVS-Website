@@ -175,8 +175,10 @@
             #download{
                 width:49%;
                 padding: 4px 4px 4px 4px;
-                float:left;
-                text-align: center
+                display: inline-block;
+                text-align: center;
+                position: relative;
+                top: 0px
             }
             #download button{
                 cursor:pointer;
@@ -193,6 +195,41 @@
             }
             #download button:active{
                 outline: none;
+            }
+            #install{
+                border: 1px solid white;
+                display: inline-block;
+                width:49%;
+            }
+            #install div{
+                padding:4px 4px 4px 4px
+            }
+            #install ul{
+                padding:0px 0px 0px 0px;
+                margin:0px 0px 0px 0px;
+                border-bottom:1px solid white
+            }
+            #install ul li{
+                border-right:1px solid white;
+                display: inline-block;
+                width: 33%;
+                font-weight: bold;
+                text-align: center;
+                list-style-type: none;
+            }
+            #install ul li:last-of-type{
+                border-right: none
+            }
+            #install ul li:hover{
+                background-color: white;
+                color:black
+            }
+            #install ul li a{
+                display: block;
+                width: 100%;
+                height: 100%;
+                padding: 4px;
+                cursor: pointer;
             }
         </style>
         <script type="application/javascript">
@@ -281,10 +318,77 @@
             <h2>Download TaxE</h2>
             <p>TaxE runs on Windows, Mac and Linux with Java installed.  It is not currently compatible with Android or iOS (and most probably never will be).  Download below and Play Now.</p>
             <div id="download">
-                <button type="button" id="jardownload" title="Download Now" onclick="fileDownload('https://github.com/alwaysbusy/FVS2/blob/master/taxe.jar?raw=true','taxe.jar');">Download TaxE</button>
+                <button type="button" id="jardownload" title="Download Now" onclick="fileDownload('https://github.com/alwaysbusy/FVS2/blob/master/taxe.jar?raw=true','taxe.jar');">Download TaxE (alpha)</button>
                 <p>TaxE needs Java to run</p>
                 <button type="button" id="javadownload" title="Get Java" onclick="window.open('http://www.java.com/');";>Get Java</button>
+                <p>TaxE has a licence.  What that is, however, is slightly less well defined.  Basically, for now, don't do naughty things with it.  Otherwise enjoy and check back for a proper licence later.</p>
             </div>
+            <div id="install">
+                <ul>
+                    <li><a title="Windows" onclick="installChange('windows');">Windows</a></li><li>
+                    <a title="Mac" onclick="installChange('mac');">Mac OSX</a></li><li>
+                    <a title="Linux" onclick="installChange('linux');">Linux</a></li>
+                </ul>
+                <div id="install-windows">
+                    <h3>Microsoft Windows</h3>
+                    <h4>System Requirements</h4>
+                    <p>TaxE will run on Microsft Windows Vista/7/8/8.1, with at least 1GB of RAM and a recent Intel or AMD processor.</p>
+                    <p>Java must be installed and up-to-date.  TaxE may not run with a version of Oracle Java less than 8u25.</p>
+                    <h4>Installation Instructions</h4>
+                    <ol>
+                        <li>Install Java</li>
+                        <li>Download TaxE using the button to the left</li>
+                        <li>Run the "taxe.jar" file that downloads</li>
+                    </ol>
+                    <p>If TaxE will not run then please ensure Java has been installed correctly.  Java sometimes requires permission to run, so disabling UAC may resolve issues.</p>
+                </div>
+                <div id="install-mac">
+                    <h3>Apple Mac OSX</h3>
+                    <h4>System Requirements</h4>
+                    <p>TaxE will run on Apple Mac OSX Lion/Mountain Lion/Mavericks/Yosemite, on any Apple manufactured device with an Intel processor.  TaxE does not support PowerPC.</p>
+                    <p>Java must be installed and up-to-date.  TaxE may not run with a version of Oracle Java less than 8u25.</p>
+                    <h4>Installation Instructions</h4>
+                    <ol>
+                        <li>Install Java</li>
+                        <li>Download TaxE using the button to the left</li>
+                        <li>Run the "taxe.jaar" file that downloads</li>
+                    </ol>
+                    <p>If TaxE will not run please ensure Java has been installed correctly.  Java may need to be run as an Administrator, depending on your security settings.  TaxE will not run on PowerPC based Macs.</p>
+                </div>
+                <div id="install-linux">
+                    <h3>Linux (All Distributions)</h3>
+                    <h4>System Requirements</h4>
+                    <p>TaxE will run on all versions of Linux with at least 1GB of RAM and an Intel or AMD processor.  A GUI environment (Gnome/XWindows/etc.) must be installed and running.</p>
+                    <p>Java must be installed and up-to-date.  TaxE may not run with a version of Oracle Java less than 8u25.</p>
+                    <h4>Installation Instructions</h4>
+                    <ol>
+                        <li>Install Java</li>
+                        <li>Download TaxE</li>
+                        <li>Open a GUI environment</li>
+                        <li>Run the "taxe.jar" file that downloads</li>
+                    </ol>
+                    <p>If TaxE will not run please ensure Java has been installed correctly.  You may need to run TaxE as a SuperUser, depending on your security settings.  TaxE does not support terminal interaction.</p>
+                </div>
+                <script type="text/javascript">
+                    function installSetup(){
+                        window.document.getElementById("install-windows").style.display = "block";
+                        window.document.getElementById("install-mac").style.display = "none";
+                        window.document.getElementById("install-linux").style.display = "none";
+                        
+                        window.document.getElementById("download").style.height = window.document.getElementById("install").style.height;
+                    }
+                    
+                    function installChange(platform){
+                        window.document.getElementById("install-windows").style.display = "none";
+                        window.document.getElementById("install-mac").style.display = "none";
+                        window.document.getElementById("install-linux").style.display = "none";
+                        window.document.getElementById("install-" + platform).style.display = "block";
+                    }
+                    
+                    installSetup();
+                </script>
+            </div>
+            <p>TaxE was designed as part of the Computer Science SEPR modue at the University of York.  University of York assumes no responsibility for this program, and any loss or damage that occour, directly or indirectly, through using this program.</p>
         </div></section>
         <section id="code"><div class="contain">
             <h2>Explore the Code</h2>
