@@ -171,7 +171,42 @@
             .right{
                 float: right
             }
+            
+            #download{
+                width:49%;
+                padding: 4px 4px 4px 4px;
+                float:left;
+                text-align: center
+            }
+            #download button{
+                cursor:pointer;
+                background-color: green;
+                color:white;
+                font-size: 2em;
+                font-weight: bold;
+                border: none;
+                border-radius: 8px 8px 8px 8px;
+                display: block;
+                margin: 0px auto 0px auto;
+                outline: none;
+                padding:8px 8px 8px 8px;
+            }
+            #download button:active{
+                outline: none;
+            }
         </style>
+        <script type="application/javascript">
+            function fileDownload(url, dlname){
+                if(dlname == null){dlname = "";}
+                var dl = window.document.createElement("a");
+                dl.href = url;
+                dl.title = "Download " + dlname;
+                if(dlname != ""){
+                    dl.download = dlname;
+                }
+                dl.click();
+            }
+        </script>
     </head>
     <body>
         <nav id="topnav"><ul class="contain">
@@ -245,6 +280,11 @@
         <section id="get"><div class="contain">
             <h2>Download TaxE</h2>
             <p>TaxE runs on Windows, Mac and Linux with Java installed.  It is not currently compatible with Android or iOS (and most probably never will be).  Download below and Play Now.</p>
+            <div id="download">
+                <button type="button" id="jardownload" title="Download Now" onclick="fileDownload('https://github.com/alwaysbusy/FVS2/blob/master/taxe.jar?raw=true','taxe.jar');">Download TaxE</button>
+                <p>TaxE needs Java to run</p>
+                <button type="button" id="javadownload" title="Get Java" onclick="window.open('http://www.java.com/');";>Get Java</button>
+            </div>
         </div></section>
         <section id="code"><div class="contain">
             <h2>Explore the Code</h2>
