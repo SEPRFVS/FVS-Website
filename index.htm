@@ -180,7 +180,7 @@
                 position: relative;
                 top: 0px
             }
-            #download button{
+            #download button, #github{
                 cursor:pointer;
                 background-color: green;
                 color:white;
@@ -193,7 +193,7 @@
                 outline: none;
                 padding:8px 8px 8px 8px;
             }
-            #download button:active{
+            #download button:active, #github:active{
                 outline: none;
             }
             #install{
@@ -393,6 +393,16 @@
         <section id="code"><div class="contain">
             <h2>Explore the Code</h2>
             <p>TaxE is open source, which means you're free to take the game resources and code and make your own version.  All of our code is available to download on GitHub so take a look.</p>
+            <button type="button" id="github" onclick="window.open('http://www.github.com/alwaysbusy/FVS2');" title="FVS on GitHub">View on GitHub</button>
+            <p>Full information for developers is available via the GitHub Wiki for the repository.  The key features for developers are:</p>
+            <ul>
+                <li>Package and Class Hierarchy make it easy to find the code you need</li>
+                <li>Game data is stored in JSON format, so you can easily modify all data using a variety of tools (Map Editor included)</li>
+                <li>Compliant with all LibGDX standards so code follows through to on-screen</li>
+                <li>Gradle configures all dependencies automatically</li>
+                <li>JUnit Tests included to allow you to test out any modifications you make</li>
+            </ul>
+            <p>TaxE was designed using both Eclipse and IntelliJ, and necesarry configuration is included for both.</p>
         </div></section>
         <footer>
             <p class="contain">&copy; FVS 2014</p>
