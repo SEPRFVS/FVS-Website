@@ -9,7 +9,7 @@
             }
             
             body{
-                font-family: Play, Arial, sans-serif
+                font-family: Play, Arial, Helvetica, sans-serif
             }
             
             nav#topnav{
@@ -89,9 +89,16 @@
             #code{
                 background-color: maroon; color:white
             }
+            #faq{
+                background-color: yellow; color: black;
+            }
             
             h2{
                 margin-top:0px;padding-top:16px;
+            }
+            
+            a{
+                color: inherit
             }
             
             section p:last-of-type{
@@ -209,6 +216,9 @@
             #download button:active, #github:active{
                 outline: none;
             }
+            #licence{
+                width:50%
+            }
             #install{
                 border: 1px solid white;
                 display: inline-block;
@@ -263,7 +273,8 @@
             <li id="fvslogo"><a href="#top" title="FVS"><span>FVS</span>&nbsp;</a></li><li>
             <a href="#about" title="About TaxE">About</a></li><li>
             <a href="#get" title="Get TaxE">Get TaxE</a></li><li>
-            <a href="#code" title="TaxE Code">Code</a></li>
+            <a href="#code" title="TaxE Code">Code</a></li><li>
+            <a href="#faq" title="FAQs">FAQs</a></li>
         </ul></nav>
         <div id="bigpromo" style="background-color:black">
             <video autoplay="autoplay" loop="loop" muted="muted" src="res/taxecomp.mp4"></video>
@@ -278,7 +289,7 @@
                     <li><a title="Diesel" onclick="trainmenuChange('diesel');">Diesel</a></li>
                     <li><a title="Electric" onclick="trainmenuChange('electric');">Electric</a></li>
                     <li><a title="Bullet" onclick="trainmenuChange('bullet');">Bullet</a></li>
-                    <li><a title="Nuclear" onclick="trainmenuChange('nuclear');">Nucelar</a></li>
+                    <li><a title="Nuclear" onclick="trainmenuChange('nuclear');">Nuclear</a></li>
                 </ul>
                 <div>
                     <p id="trainmenu-steam">Go back to the roots of the rail indistry as you move steam trains around the game world in a bid to reach your destinations ahead of the competition.<br/><br/>They may be slow but the humble steam train will reliably get you there on time.</p>
@@ -335,7 +346,9 @@
                 <button type="button" id="jardownload" title="Download Now" onclick="fileDownload('https://github.com/alwaysbusy/FVS2/blob/master/taxe.jar?raw=true','taxe.jar');">Download TaxE (alpha)</button>
                 <p>TaxE needs Java to run</p>
                 <button type="button" id="javadownload" title="Get Java" onclick="window.open('http://www.java.com/');";>Get Java</button>
-                <p>TaxE has a licence.  What that is, however, is slightly less well defined.  Basically, for now, don't do naughty things with it.  Otherwise enjoy and check back for a proper licence later.</p>
+                <p>TaxE is licenced under Creative Commons BY-NC-SA 4.0 International, except where otherwise required (such as for SEPR teams who may use the game in accordance with the rules of the Assessments).</p>
+                <p><a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="Licence"><img src="res/by-nc-sa.eu.png" alt="CC BY-NC-SA" id="licence"/></a></p>
+                <p><a><strong>User Manual</strong></a></p>
             </div>
             <div id="install">
                 <ul>
@@ -417,9 +430,55 @@
                 <li>JUnit Tests included to allow you to test out any modifications you make</li>
             </ul>
             <p>TaxE was designed using both Eclipse and IntelliJ, and necesarry configuration is included for both.</p>
+            <h3>Presentation</h3>
+            <p>If you missed the developer presentation, or would like to see it again because it was just that amazing and awesome, then you can <a href="presentation/" title="View the Developer Presentation">view it online</a>.</p>
+            <h3>Developer Resources</h3>
+            <p>We have made our developer documentation available to help people extend and develop TaxE to make it even better than it already is.</p>
+            <ul>
+                <li>Architecture Report</li>
+                <li>GUI Report</li>
+                <li>Testing Report</li>
+                <li>GitHub Wiki</li>
+            </ul>
+            <h3>Developer Offer</h3>
+            <p>We're offering all developers taking this project on for Assessment 3 of SEPR the chance to get the edge with TaxE.  If you have any questions then please get in touch with us at <a href="mailto:contact-sepr-fvs-group@york.ac.uk" title="Contact FVS">contact-sepr-fvs-group [at] york.ac.uk</a> (University of York E-mail addresses only).  If you select the group project you can also receive an introductory session to TaxE and we'll guide you through the codebase.  Just <a href="mailto:contact-sepr-fvs-group@york.ac.uk" title="Contact FVS">get in touch</a>.</p>
+        </div></section>
+        <section id="faq"><div class="contain">
+            <h2>FAQs</h2>
+            <p>Both users and developers have been asking about FVS.  We want to make it easy to get some of the most common answers.</p>
+            <ul>
+                <li>
+                    <h3>What is this?  Who are you?  What are you subjecting my eyes to?</h3>
+                    <p>FVS are a team of 6 students from the University of York in their 2nd year of studying Computer Science.  TaxE is a game set as part of the SEPR module, in which we form a software development team and show off our skills by building a game.  This website advertises that game, which we think it pretty good.  Give it a go, you might like it?</p>
+                </li>
+                <li>
+                    <h3>I tried it an feature X isn't there.</h3>
+                    <p>This game fufills the requirements for Assessment 2, which requires about half a game be implemented.  We'll probably put it in one day, and by that we mean March 2015</p>
+                </li>
+                <li>
+                    <h3>I don't mind feature X isn't there.  Your game is the best thing I've played in the past 20 minutes!!!</h3>
+                    <p>Awww, thanks.  If your a SEPR team then why not select it?  If you're not a SEPR team then select it anyway.  We're not sure what you could select it for, though.</p>
+                </li>
+                <li>
+                    <h3>Before I select it though I'd like to read some actual instructions with words in it.</h3>
+                    <p>Check below the game download link there are some lovely instructions that you can read/save/print/eat.  These instructions will instruct you on how to play the game.  It may be worth adding that these instructions are not suitable for human consumption.</p>
+                </li>
+                <li>
+                    <h3>I still remain to be convinced.  What else have you got for me?</h3>
+                    <p>We've got lot's of information in our Code section, including the developers presentation, GUI report and Architecture report.  We also have some testing evidence so you can confirm that we have confirmed that the game works (has been confirmed).</p>
+                </li>
+            </ul>
+            <p>For our full developer offering, please see the code section above.  All consumer questions are answered in the Get TaxE section.</p>
+            <ul>
+                <li>
+                    <h3>I have one more question.  Do you wish to thank anyone?</h3>
+                    <p>Yes we do wish thank some people.  The developers at <a href="http://libgdx.badlogicgames.com/" title="BadLogic Games" target="_blank">BadLogic Games and LibGDX</a> provided the library which runs the game, and the people at the <a href="http://www.eclipse.org/" title="Eclipse" target="_blank">Eclipse Foundation</a> and <a href="https://www.jetbrains.com/" title="JetBrains" target="_blank">JetBrains</a> made the tools we developed with.  Also a guy called <a href="http://commons.wikimedia.org/wiki/File:BLANK_in_Europe_%28relief%29_%28-mini_map%29.svg" title="Map of Europe on Wikimedia Commons" target="_blank">TUBS on Wikimedia Commons</a> who made the map in the background.  Oh, and <a href="https://education.github.com/pack" title="GitHub Student Pack" target="_blank">GitHub</a> for their free repositories they give to students, as well as discounts with their partners.</p>
+                </li>
+            </ul>
+            <p>If you have any other questions, and have a University of York email address, then please email us at <a href="mailto:contact-sepr-fvs-group@york.ac.uk" title="Contact FVS">contact-sepr-fvs-group [at] york.ac.uk</a>, and we'll get back to you.</p>
         </div></section>
         <footer>
-            <p class="contain">&copy; FVS 2014</p>
+            <p class="contain">&copy; FVS 2015</p>
         </footer>
     </body>
 </html>
