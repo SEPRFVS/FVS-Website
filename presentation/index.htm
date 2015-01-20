@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FVS TaxE Developer Presentation</title>
+        <link href='http://fonts.googleapis.com/css?family=Play:400,700' rel='stylesheet' type='text/css'>
+        <style type="text/css">
+            html, body{
+                margin:0;padding:0;
+                width: 100%;
+                height: 100%
+            }
+            body{
+                font-family: Play, Arial, Helvetica, sans-serif;
+            }
+            
+            footer{
+                background-color: #323232;
+                color: white;
+                font-size: 0.8em;
+                position: fixed;
+                bottom: 0px;
+                left: 0px;
+                width: 100%;
+                padding: 4px 4px 4px 4px;
+                z-index: 100000;
+            }
+            footer ul{
+                float: right;
+                margin: 0px 0px 0px 0px;
+                padding: 0px 0px 0px 0px;
+            }
+            footer ul li{
+                display: inline-block;
+                list-style: none;
+                margin: 0px 8px 0px 0px;
+            }
+            footer ul li a{
+                color: inherit
+            }
+            
+            .slide{
+                display: block;
+                width: 100%;
+                height: 100%;
+                background-color: white;
+                font-size: 3em;
+                overflow: hidden hidden;
+                position: relative;
+            }
+            .titleslide{
+                background-color: hotpink;
+                color: white;
+                text-align: center;
+                font-size: 4em
+            }
+            header{
+                background-color: hotpink;
+                color: white;
+            }
+            
+            h1{
+                margin: 0px 0px 0px 0px;
+                position: relative;
+                top: 30%;
+                z-index: 10;
+            }
+            h2{
+                margin:0px 0px 0px 0px;
+                padding: 8px 8px 8px 8px;
+                font-weight: 8em;
+            }
+            a{
+                color: hotpink
+            }
+            .titleslide p{
+                margin: 0px 0px 0px 0px;
+                position: relative;
+                top: 40%;
+                z-index: 10;
+            }
+            .titleslide video{
+                opacity: 0.3;
+                width: 100%;
+                height: 100%;
+                z-index: 0
+            }
+            .small{
+                font-size: 0.5em
+            }
+        </style>
+        <script type="application/javascript">
+            var slideno = 1;
+            
+            function prepSlides(){
+                var counter = 2;
+                while(window.document.getElementById("slide-" + counter)){
+                    window.document.getElementById("slide-" + counter).style.display = "none";
+                    counter++;
+                }
+            }
+            
+            function toggleFullScreen() {
+                if (!document.fullscreenElement &&    // alternative standard method
+                    !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {  // current working methods
+                    if (document.documentElement.requestFullscreen) {
+                        document.documentElement.requestFullscreen();
+                    } else if (document.documentElement.msRequestFullscreen) {
+                        document.documentElement.msRequestFullscreen();
+                    } else if (document.documentElement.mozRequestFullScreen) {
+                        document.documentElement.mozRequestFullScreen();
+                    } else if (document.documentElement.webkitRequestFullscreen) {
+                        document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+                    }
+                } else {
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen();
+                    } else if (document.msExitFullscreen) {
+                        document.msExitFullscreen();
+                    } else if (document.mozCancelFullScreen) {
+                        document.mozCancelFullScreen();
+                    } else if (document.webkitExitFullscreen) {
+                        document.webkitExitFullscreen();
+                    }
+                }
+            }
+            
+            function nextSlide(){
+                if(slideno != 6){
+                    window.document.getElementById("slide-" + slideno).style.display = "none";
+                    slideno++;
+                    window.document.getElementById("slide-" + slideno).style.display = "block";
+                }
+            }
+            
+            function prevSlide(){
+                if(slideno != 1){
+                    window.document.getElementById("slide-" + slideno).style.display = "none";
+                    slideno = slideno - 1;
+                    window.document.getElementById("slide-" + slideno).style.display = "block";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <section id="slide-1" class="slide titleslide">
+            <!--<video autoplay="autoplay" loop="loop" muted="muted" src="../res/taxecomp.mp4"></video>-->
+            <h1>TaxE</h1>
+            <p class="subheading">A Game about Trains</p>
+        </section>
+        <section id="slide-2" class="slide">
+            <header>
+                <h2>Key Features - User</h2>
+            </header>
+            <ul>
+                <li>Over 4000 possible goals for hours of enjoyment</li>
+                <li>10 different train types for increased competition</li>
+                <li>Visit over 30 european destinations</li>
+                <li>Freedom to move around; send your trains anywhere with easy routing</li>
+                <li>Competition to the end with blind goal completion</li>
+            </ul>
+        </section>
+        <section id="slide-3" class="slide">
+            <header>
+                <h2>Key Features - Developer</h2>
+            </header>
+            <ul>
+                <li>Package and Class Hierarchy make it easy to find the code you need</li>
+                <li>Game data is stored in JSON format, so you can easily modify all data using a variety of tools (Map Editor included)</li>
+                <li>Compliant with all LibGDX standards so code follows through to on-screen</li>
+                <li>Gradle configures all dependencies automatically</li>
+                <li>JUnit Tests included to allow you to test out any modifications you make</li>
+            </ul>
+        </section>
+        <section id="slide-4" class="slide">
+            <header>
+                <h2>Demonstration</h2>
+            </header>
+            <p class="small">Try the web emulation or download at <a href="http://upvot.es/SEPR-FVS" title="Download TaxE" target="_blank">upvot.es/SEPR-FVS</a></p>
+        </section>
+        <section id="slide-5" class="slide">
+            <header>
+                <h2>The FVS Package</h2>
+            </header>
+            <ul>
+                <li>Working game implementation in industry leading LibGDX</li>
+                <li>Map Editing and Screenshot tool</li>
+                <li>Configurable JSON data</li>
+                <li>Full Documentation and Wiki</li>
+                <li>Introductory Training Session to code and tools</li>
+            </ul>
+        </section>
+        <section id="slide-6" class="slide titleslide">
+            <p>Thank You and choose FVS</p>
+        </section>
+        
+        <footer>
+            &copy; FVS 2015
+            <ul>
+                <li><a onclick="toggleFullScreen();">Fullscreen</a></li>
+                <li><a onclick="prevSlide();">Prev</a></li>
+                <li><a onclick="nextSlide();">Next</a></li>
+            </ul>
+        </footer>
+        <script type="application/javascript">
+            prepSlides();
+        </script>
+    </body>
+</html>
