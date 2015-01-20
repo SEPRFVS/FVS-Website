@@ -256,15 +256,22 @@
             }
         </style>
         <script type="application/javascript">
+            var saveTimeout = null;
+            
             function fileDownload(url, dlname){
                 if(dlname == null){dlname = "";}
-                var dl = window.document.createElement("a");
-                dl.href = url;
-                dl.title = "Download " + dlname;
-                if(dlname != ""){
-                    dl.download = dlname;
+                var downloader = window.document.createElement("a");
+                downloader.href = url;
+                downloader.title = "Download " + dlname;
+                downloader.download = dlname;
+                downloader.onclick = function(){
+                    window.clearTimeout(saveTimeout);
                 }
-                dl.click();
+                saveTimeout = window.setTimeout(function(){
+                    window.open(url, "downloader");
+                    window.focus();
+                },1000);
+                downloader.click();
             }
         </script>
     </head>
