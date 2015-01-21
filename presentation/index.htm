@@ -35,7 +35,8 @@
                 margin: 0px 8px 0px 0px;
             }
             footer ul li a{
-                color: inherit
+                color: inherit;
+                cursor: pointer;
             }
             
             .slide{
@@ -44,18 +45,25 @@
                 height: 100%;
                 background-color: white;
                 font-size: 3em;
-                overflow: hidden hidden;
+                overflow: hidden;
                 position: relative;
             }
             .titleslide{
                 background-color: hotpink;
                 color: white;
                 text-align: center;
-                font-size: 4em
+                font-size: 4em;
+                background-image: url(logowhite.png);
+                background-position: bottom center;
+                background-repeat: no-repeat no-repeat;
             }
             header{
                 background-color: hotpink;
                 color: white;
+                background-image: url(logowhite.png);
+                background-position: right center;
+                background-repeat: no-repeat no-repeat;
+                background-size: auto 50%;
             }
             
             h1{
@@ -87,6 +95,17 @@
             .small{
                 font-size: 0.5em
             }
+            .printonly{
+                display: none;
+            }
+            
+            #demo{
+                margin: 0px auto 0px auto;
+                display: block;
+                height: 80%;
+                width: auto;
+                max-width: 1008px;
+            }
         </style>
         <script type="application/javascript">
             var slideno = 1;
@@ -99,6 +118,7 @@
                 }
             }
             
+            //Toggle code from MDN
             function toggleFullScreen() {
                 if (!document.fullscreenElement &&    // alternative standard method
                     !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {  // current working methods
@@ -164,7 +184,7 @@
                 <h2>Key Features - Developer</h2>
             </header>
             <ul>
-                <li>Package and Class Hierarchy make it easy to find the code you need</li>
+                <li>Package and Class Hierarchy make it easy to find the code you need, pick-up and go</li>
                 <li>Game data is stored in JSON format, so you can easily modify all data using a variety of tools (Map Editor included)</li>
                 <li>Compliant with all LibGDX standards so code follows through to on-screen</li>
                 <li>Gradle configures all dependencies automatically</li>
@@ -175,7 +195,11 @@
             <header>
                 <h2>Demonstration</h2>
             </header>
-            <p class="small">Download at <a href="http://upvot.es/SEPR-FVS" title="Download TaxE" target="_blank">upvot.es/SEPR-FVS</a></p>
+            <p class="small printonly">Download at <a href="http://upvot.es/SEPR-FVS" title="Download TaxE" target="_blank">upvot.es/SEPR-FVS</a></p>
+            <video id="demo" preload="preload" controls="controls">
+                <source type="video/mp4" src="FVS2minc.mp4" />
+                <source type="video/webm" src="FVS2minc.webm" />
+            </video>
         </section>
         <section id="slide-5" class="slide">
             <header>
