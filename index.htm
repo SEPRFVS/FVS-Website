@@ -240,6 +240,29 @@
                 display: block;
                 width: 100%
             }
+            
+            #faqs ol{
+                text-align: left;
+                max-width: 1008px;
+                margin: 0px auto 0px auto;
+                padding: 0px 0px 0px 0px
+            }
+            #faqs ol li{
+                list-style-type: none;
+                font-size: 2em;
+                padding: 8px 8px 8px 8px;
+                border-bottom: 2px solid white;
+            }
+            #faqs ol li:last-of-type{
+                border-bottom: none;
+            }
+            #faqs ol li .q{
+                font-weight: bold;
+            }
+            #faqs ol li a{
+                color: inherit;
+                text-decoration: underline
+            }
         </style>
         <script type="text/javascript" src="res/jquery-2.1.3.min.js"></script>
         <script type="application/javascript">
@@ -317,6 +340,35 @@
                 <li><a href="http://www.github.com/SEPRFVS/FVS3" title="FVS on GitHub" target="_blank">GitHub</a></li>
             </ul>
         </section>
+        <section id="faqs">
+            <h2>FAQs</h2>
+            <ol>
+                <li>
+                    <p class="q">Oh no, not you again?</p>
+                    <p>Yes, it is.  And we've done things!  More precisely, we've adapted the game made by <a href="http://www.eurotraingame.co.uk/" title="ADB" target="_blank">ADB</a> in the previous assessment.</p>
+                </li>
+                <li>
+                    <p class="q">What have you done to it?</p>
+                    <p>We've added some exciting new features as well as changing some old ones, such as</p>
+                    <ul>
+                        <li>Adding obstacles to make gameplay more interesting at junctions and stations</li>
+                        <li>Making scoring more challenging with the computer marking you against the best route with Dijkstra's algorithm</li>
+                        <li>Adding more objectves to make the game more interesting, such as bonuses for getting to your destination on time or visiting another station</li>
+                        <li>Making the game winnable by being the first to reach 6000 points</li>
+                        <li>Removing clutter and making the game screen simpler with less non-gameplay functionality</li>
+                    </ul>
+                    <p>If you're a developer, you'll be pleased to hear that we've modified some of the code to give thr program a sloid foundation throughout.  You can modify and extend the game easily to have even more features.</p>
+                </li>
+                <li>
+                    <p class="q">What's available if I choose this?</p>
+                    <p>The same as last time, we'll provide you will all the documentation and files you need to build upon the game.  We'll also provide you with an introduction to the game and our changes if you need it.  We'll also be in <a href="mailto:contact-sepr-fvs-group@york.ac.uk" title="Contact FVS">email contact</a> if you need us.</p>
+                </li>
+                <li>
+                    <p class="q">Who would you like to thank?</p>
+                    <p>We'd like to thank our mothers for making all of this possible, as well as our Hollywood publicist and all the people on the comittee who decided to give us thsis award.  LibGDX (our Game Library), Eclise and JetBrains (our Development tools), Apache Commons (our Faster Fonts people) and GitHub (our Sourcecode Repository) should probably also get a passing mention.</p>
+                </li>
+            </ol>
+        </section>
         
         <aside id="pagenav"><div>
             <ul id="pagenavlist"></ul>
@@ -324,7 +376,7 @@
         
         <aside id="topbar">
             <ul>
-                <li id="fvslogo"><a href="#head" title="FVS"><span>FVS</span></a></li>
+                <li id="fvslogo"><a href="#home" title="FVS"><span>FVS</span></a></li>
                 <li><a href="assessment2/" title="FVS Assessment 2"><span>See the Assessment 2 Website</span></a></li>
             </ul>
         </aside>
