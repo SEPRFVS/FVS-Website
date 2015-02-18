@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FVS TaxE Developer Presentation - Assessment 3</title>
+        <style type="text/css">
+            @font-face {
+                font-family: 'GOST Type A';
+                src: url('../res/gost.woff') format('woff');
+                font-weight: normal;
+                font-style: normal;
+            }
+            
+            html, body{
+                margin:0;padding:0;
+                width: 100%;
+                height: 100%
+            }
+            body{
+                font-family: "GOST Type A", Arial, Helvetica, sans-serif;
+            }
+            footer{
+                font-size: 0.8em;
+            }
+            .small{
+                font-size: 0.5em
+            }
+        </style>
+        <style type="text/css" media="screen">
+            footer{
+                background-color: #323232;
+                color: white;
+                position: fixed;
+                bottom: 0px;
+                left: 0px;
+                width: 100%;
+                padding: 4px 4px 4px 4px;
+                z-index: 100000;
+            }
+            footer ul{
+                float: right;
+                margin: 0px 0px 0px 0px;
+                padding: 0px 0px 0px 0px;
+            }
+            footer ul li{
+                display: inline-block;
+                list-style: none;
+                margin: 0px 8px 0px 0px;
+            }
+            footer ul li a{
+                color: inherit;
+                cursor: pointer;
+            }
+            
+            .slide{
+                display: none;
+                width: 100%;
+                height: 100%;
+                background-color: white;
+                font-size: 3em;
+                overflow: hidden;
+                position: relative;
+            }
+            .titleslide{
+                background-color: navy;
+                color: white;
+                text-align: center;
+                font-size: 4em;
+                background-image: url(logowhite.png);
+                background-position: bottom center;
+                background-repeat: no-repeat no-repeat;
+            }
+            .nologo{
+                background-image: none;
+            }
+            .currentslide{
+                display: block;
+            }
+            header{
+                background-color: navy;
+                color: white;
+                background-image: url(logowhite.png);
+                background-position: right center;
+                background-repeat: no-repeat no-repeat;
+                background-size: auto 50%;
+            }
+            
+            h1{
+                margin: 0px 0px 0px 0px;
+                position: relative;
+                top: 30%;
+                z-index: 10;
+            }
+            h2{
+                margin:0px 0px 0px 0px;
+                padding: 8px 8px 8px 8px;
+                font-weight: 8em;
+            }
+            a{
+                color: hotpink
+            }
+            .titleslide p{
+                margin: 0px 0px 0px 0px;
+                position: relative;
+                top: 40%;
+                z-index: 10;
+            }
+            .titleslide video{
+                opacity: 0.3;
+                width: 100%;
+                height: 100%;
+                z-index: 0
+            }
+            .printonly{
+                display: none;
+            }
+            
+            #demo{
+                margin: 0px auto 0px auto;
+                display: block;
+                height: 80%;
+                width: auto;
+                max-width: 1008px;
+            }
+            
+            img.showcase{
+                display: block;
+                margin:0px auto 0px auto;
+                width:auto;
+                height: 80%;
+            }
+        </style>
+        <style type="text/css" media="print">
+            video{
+                display: none
+            }
+            .slide{
+                display: block;
+            }
+            footer ul{
+                display: none;
+            }
+            a:after{
+                content:" (" attr(href) ")";
+            }
+            .noprint{
+                display: none
+            }
+        </style>
+        <script type="application/javascript">
+            var slideno = 1;
+            
+            function prepSlides(){
+                //var counter = 2;
+                //while(window.document.getElementById("slide-" + counter)){
+                //    window.document.getElementById("slide-" + counter).style.display = "none";
+                //    counter++;
+                //}
+                window.document.getElementById("slide-1").classList.add("currentslide");
+            }
+            
+            //Toggle code from MDN
+            function toggleFullScreen() {
+                if (!document.fullscreenElement &&    // alternative standard method
+                    !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {  // current working methods
+                    if (document.documentElement.requestFullscreen) {
+                        document.documentElement.requestFullscreen();
+                    } else if (document.documentElement.msRequestFullscreen) {
+                        document.documentElement.msRequestFullscreen();
+                    } else if (document.documentElement.mozRequestFullScreen) {
+                        document.documentElement.mozRequestFullScreen();
+                    } else if (document.documentElement.webkitRequestFullscreen) {
+                        document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+                    }
+                } else {
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen();
+                    } else if (document.msExitFullscreen) {
+                        document.msExitFullscreen();
+                    } else if (document.mozCancelFullScreen) {
+                        document.mozCancelFullScreen();
+                    } else if (document.webkitExitFullscreen) {
+                        document.webkitExitFullscreen();
+                    }
+                }
+            }
+            
+            function nextSlide(){
+                if(window.document.getElementById("slide-" + (slideno + 1))){
+                    window.document.getElementById("slide-" + slideno).classList.remove("currentslide");
+                    slideno++;
+                    window.document.getElementById("slide-" + slideno).classList.add("currentslide");
+                }
+            }
+            
+            function prevSlide(){
+                if(slideno != 1){
+                    window.document.getElementById("slide-" + slideno).classList.remove("currentslide");
+                    slideno = slideno - 1;
+                    window.document.getElementById("slide-" + slideno).classList.add("currentslide");
+                }
+            }
+            
+            document.onkeydown = function(event) {
+                switch(event.keyCode){
+                    case 37:
+                    case 38:
+                        prevSlide();
+                        break;
+                    case 39:
+                    case 40:
+                    case 32:
+                    case 13:
+                        nextSlide();
+                        break;
+                    case 70:
+                        toggleFullScreen();
+                        break;
+                }
+            };
+        </script>
+    </head>
+    <body>
+        <section id="slide-1" class="slide titleslide">
+            <h1>TaxE</h1>
+            <p class="subheading">Delightful Trains</p>
+        </section>
+        <section id="slide-2" class="slide">
+            <header>
+                <h2>&nbsp;</h2>
+            </header>
+            <img class="showcase" src="../res/gallery/map.png" alt="Screenshot of TaxE" />
+        </section>
+        <section id="slide-3" class="slide titleslide nologo noprint">
+            <h1>Obstacles</h1>
+        </section>
+        <section id="slide-4" class="slide">
+            <header>
+                <h2>Obstacles</h2>
+            </header>
+            <img class="showcase" src="../res/gallery/obstacle.png" alt="Screenshot of Obstacle Shop" />
+        </section>
+        <section id="slide-5" class="slide titleslide nologo noprint">
+            <h1>Scoring</h1>
+        </section>
+        <section id="slide-6" class="slide">
+            <header>
+                <h2>Scoring</h2>
+            </header>
+            <ul>
+                <li>Dijkstras Algorithm</li>
+                <li>Bigger Risk, Bigger Score</li>
+                <li>Money and Points</li>
+                <li>First to 6000 points wins!</li>
+            </ul>
+        </section>
+        <section id="slide-7" class="slide titleslide nologo noprint">
+            <h1>Quantifiable Goals</h1>
+        </section>
+        <section id="slide-8" class="slide">
+            <header>
+                <h2>Quantifiable Goals</h2>
+            </header>
+            <img class="showcase" src="../res/gallery/goal.png" alt="Screenshot of Goals Screen" />
+        </section>
+        <section id="slide-9" class="slide titleslide nologo noprint">
+            <h1>In addition to...</h1>
+            <p class="subheading">Features from ADB</p>
+        </section>
+        <section id="slide-10" class="slide">
+            <header>
+                <h2>In addition to...</h2>
+            </header>
+            <ul>
+                <li>Absolute Goals</li>
+                <li>Stunning Graphics</li>
+                <li>Simple Routing</li>
+                <li>Shopping</li>
+            </ul>
+        </section>
+        
+        <section id="slide-11" class="slide">
+            <header>
+                <h2>Demonstration</h2>
+            </header>
+            <p class="small printonly">Download at <a href="http://upvot.es/SEPR-FVS" title="Download TaxE" target="_blank">upvot.es/SEPR-FVS</a></p>
+            <video id="demo" preload="preload" controls="controls" muted="muted">
+                <source type="video/mp4" src="Fvs3nocapcompress.mp4" />
+            </video>
+        </section>
+        <section id="slide-12" class="slide">
+            <header>
+                <h2>What's available?</h2>
+            </header>
+            <ul>
+                <li>Working game implementation with full current specification</li>
+                <li>Full Documentation available online</li>
+                <li>Introductory Session to modifications and original code</li>
+                <li>All graphics as PSD files ready for requirements change</li>
+            </ul>
+        </section>
+        <section id="slide-13" class="slide titleslide">
+            <p>Thank You</p>
+        </section>
+        
+        <footer>
+            &copy; FVS 2015
+            <ul>
+                <li><a onclick="toggleFullScreen();">Fullscreen</a></li>
+                <li><a onclick="prevSlide();">Prev</a></li>
+                <li><a onclick="nextSlide();">Next</a></li>
+            </ul>
+        </footer>
+        <script type="application/javascript">
+            prepSlides();
+        </script>
+    </body>
+</html>
