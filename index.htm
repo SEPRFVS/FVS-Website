@@ -277,7 +277,7 @@
             #overbox-box{
                 background-color: #FFFFFF;
                 width: 90%;
-                height: 75%;
+                height: 85%;
                 margin: 40px auto 40px auto;
             }
             #overbox-close{
@@ -299,9 +299,11 @@
                 height: 100%;
                 width: 100%;
             }
-            #overbox-content iframe{
+            #overbox-content iframe, #overbox-content video{
                 border: none;
                 outline: none;
+                width: 100%;
+                height: 85%
             }
             .docview{
                 width: 100%;
@@ -372,12 +374,18 @@
                 var content = '<iframe class="docview" src="' + url + '"><p><a href="' + url + '" title="Download ' + title + '" target="_blank">Download ' + title + '</a></p></iframe><p class="doclink"><a href="' + url + '" title="Download ' + title + '" target="_blank">Download ' + title + '</a></p>';
                 showOverBox(title, content);
             }
+            
+            function showOverVideo(title, url){
+                var content = '<video autoplay="autoplay" src="' + url + '"></video>';
+                showOverBox(title, content);
+            }
         </script>
     </head>
     <body>
         <section id="home">
             <h1>FVS TaxE</h1>
             <ul>
+                <li><a href="javascript:showOverVideo('TaxE','res/fvs3compress.mp4');" title="See TaxE in Action">Demonstration</a></li>
                 <li><a href="https://github.com/SEPRFVS/FVS3/releases/download/Assessment-3/TaxE.jar" title="Download TaxE" target="_blank">Download</a></li>
                 <li><a href="#documentation" title="Documentation">Documentation</a></li>
                 <li><a href="http://www.github.com/SEPRFVS/FVS3" title="FVS on GitHub" target="_blank">Developers</a></li>
