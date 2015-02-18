@@ -207,7 +207,8 @@
                 height: 160px;
             }
             #gameplay ul li a{
-                text-decoration: none
+                text-decoration: none;
+                cursor: pointer
             }
             #gameplay ul li img{
                 border: none;
@@ -300,8 +301,9 @@
             #overbox-content{
                 height: 100%;
                 width: 100%;
+                text-align: center;
             }
-            #overbox-content iframe, #overbox-content video{
+            #overbox-content iframe, #overbox-content video, #overbox-content img{
                 border: none;
                 outline: none;
                 width: 100%;
@@ -321,6 +323,12 @@
             }
             .doclink a:hover{
                 text-decoration: underline;
+            }
+            #overbox-content img{
+                height: 85%;
+                width: auto;
+                margin: 0px auto 0px auto;
+                display: block;
             }
         </style>
         <script type="text/javascript" src="res/jquery-2.1.3.min.js"></script>
@@ -357,6 +365,13 @@
               });
             });
             
+            $(function() {
+                for(var li in window.document.getElementById('gameplay').getElementsByTagName('li')){
+                    var aElement = window.document.getElementById('gameplay').getElementsByTagName('li')[li].getElementsByTagName('a')[0];
+                    aElement.setAttribute('title',aElement.getElementsByTagName('img')[0].getAttribute('alt'));
+                }
+            });
+            
             function showOverBox(title, content){
                 window.document.getElementById('overbox-title').innerHTML = title;
                 window.document.getElementById('overbox-content').innerHTML = content;
@@ -380,6 +395,12 @@
             function showOverVideo(title, url){
                 var content = '<video autoplay="autoplay" src="' + url + '"></video>';
                 showOverBox(title, content);
+            }
+            
+            function showOverImage(anElement){
+                var imgElement = anElement.getElementsByTagName('img')[0];
+                var content = '<img src="' + imgElement.getAttribute('src') + '" alt="' + imgElement.getAttribute('alt') + '" />';
+                showOverBox(imgElement.getAttribute('alt'), content);
             }
         </script>
     </head>
@@ -410,18 +431,18 @@
         <section id="gameplay">
             <h2>Gameplay</h2>
             <ul>
-                <li><a href="javascript:void(0);" title=""><img src="res/gallery/menu.png" alt="Main Menu" /></a></li>
-                <li><a href="javascript:void(0);" title=""><img src="res/gallery/start.png" alt="Start Game" /></a></li>
-                <li><a href="javascript:void(0);" title=""><img src="res/gallery/pause.png" alt="Pause Menu" /></a></li>
-                <li><a href="javascript:void(0);" title=""><img src="res/gallery/map.png" alt="Game Map" /></a></li>
-                <li><a href="javascript:void(0);" title=""><img src="res/gallery/train.png" alt="Train Shop" /></a></li>
-                <li><a href="javascript:void(0);" title=""><img src="res/gallery/trainplace.png" alt="Placing a train" /></a></li>
-                <li><a href="javascript:void(0);" title=""><img src="res/gallery/trainselect.png" alt="Selecting a Train at a Station" /></a></li>
-                <li><a href="javascript:void(0);" title=""><img src="res/gallery/obstacle.png" alt="Obstacle Shop" /></a></li>
-                <li><a href="javascript:void(0);" title=""><img src="res/gallery/obstaclemap.png" alt="Obstacle in place" /></a></li>
-                <li><a href="javascript:void(0);" title=""><img src="res/gallery/fuel.png" alt="Fuel Shop" /></a></li>
-                <li><a href="javascript:void(0);" title=""><img src="res/gallery/goal.png" alt="Goal Menu" /></a></li>
-                <li><a href="javascript:void(0);" title=""><img src="res/gallery/complete.png" alt="Completing a Goal" /></a></li>
+                <li><a onclick="javascript:showOverImage(this);" title=""><img src="res/gallery/menu.png" alt="Main Menu" /></a></li>
+                <li><a onclick="javascript:showOverImage(this);" title=""><img src="res/gallery/start.png" alt="Start Game" /></a></li>
+                <li><a onclick="javascript:showOverImage(this);" title=""><img src="res/gallery/pause.png" alt="Pause Menu" /></a></li>
+                <li><a onclick="javascript:showOverImage(this);" title=""><img src="res/gallery/map.png" alt="Game Map" /></a></li>
+                <li><a onclick="javascript:showOverImage(this);" title=""><img src="res/gallery/train.png" alt="Train Shop" /></a></li>
+                <li><a onclick="javascript:showOverImage(this);" title=""><img src="res/gallery/trainplace.png" alt="Placing a train" /></a></li>
+                <li><a onclick="javascript:showOverImage(this);" title=""><img src="res/gallery/trainselect.png" alt="Selecting a Train at a Station" /></a></li>
+                <li><a onclick="javascript:showOverImage(this);" title=""><img src="res/gallery/obstacle.png" alt="Obstacle Shop" /></a></li>
+                <li><a onclick="javascript:showOverImage(this);" title=""><img src="res/gallery/obstaclemap.png" alt="Obstacle in place" /></a></li>
+                <li><a onclick="javascript:showOverImage(this);" title=""><img src="res/gallery/fuel.png" alt="Fuel Shop" /></a></li>
+                <li><a onclick="javascript:showOverImage(this);" title=""><img src="res/gallery/goal.png" alt="Goal Menu" /></a></li>
+                <li><a onclick="javascript:showOverImage(this);" title=""><img src="res/gallery/complete.png" alt="Completing a Goal" /></a></li>
             </ul>
         </section>
         <section id="documentation">
