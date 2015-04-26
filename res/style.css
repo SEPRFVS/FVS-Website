@@ -1,0 +1,138 @@
+html, body{
+    width: 100%;
+    height: 100%;
+    margin: 0
+}
+
+body{
+    font-family: "Play", Helvetica, Ariel, sans-serif;
+}
+
+header{
+    height: 500px;
+    min-width: 1008px;
+    margin: 0px auto 0px auto;
+    display: table-cell;
+    vertical-align: middle;
+    background-position: center center;
+    background-size: cover;
+}
+
+header h1{
+    text-align: center;
+    width: 100%;
+    font-size: 4em;
+    z-index: 1000;
+    text-shadow: 2px 2px 1px white;
+}
+
+#mainmenuholder {
+    visibility: collapse;
+}
+
+#mainmenu{
+    background-color: white;
+    color: black;
+    width: 100%;
+    z-index: 10000;
+    top: 0px;
+    left: 0px;
+}
+
+#mainmenu div {
+    background-image: url('fvs64.png');
+    background-position: right center;
+    background-repeat: no-repeat no-repeat;
+    background-size: auto 50%;
+}
+
+#mainmenu ul{
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    height: 5em;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#mainmenu ul li{
+    display: inline-block;
+    padding: 0px 16px 0px 0px;
+    font-size: 2em;
+}
+
+#mainmenu a {
+    color: inherit;
+    text-decoration: none;
+}
+
+#mainmenu a:hover {
+    color: gray;
+}
+
+footer{
+    font-size: 0.8em;
+    background-color: #323232;
+    color: white;
+}
+
+#mainmenu div, footer p, .news, .contain {
+    max-width: 1008px;
+    margin: 0px auto 0px auto;
+}
+
+.news {
+    font-family: "Merriweather", Georgia, Georgia Ref, "Times New Roman", serif;
+    border: 1px solid black;
+    padding: 2px 2px 2px 2px;
+}
+
+.news div{
+    -webkit-column-rule-style: solid;
+    -webkit-column-rule-color: lightgray;
+    -webkit-column-rule-width: 1px;
+    -webkit-column-gap: 32px;
+    -moz-column-rule-style: solid;
+    -moz-column-rule-color: lightgray;
+    -moz-column-rule-width: 1px;
+    -moz-column-gap: 32px;
+}
+
+.news h2, .news h3 {
+    text-align: center;
+    margin: 0px 8px 0px 8px;
+}
+
+.news h2 {
+    border-bottom: 4px solid lightgray;
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.news h3 {
+    font-size: 2em;
+}
+
+.col3 {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+}
+.col3 img {
+    width: 100%;
+}
+
+.big {
+    font-size: 2em;
+}
+
+button {
+    font-family: "Play", Helvetica, Ariel, sans-serif;
+}
+
+button.green {
+    background-color: lime;
+    color: white;
+    font-weight: bold;
+    border-width: 0px;
+    border-radius: 0px;
+    cursor: pointer;
+}
